@@ -1,0 +1,176 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello [applicant](persona)
+    - hi [recruiter](persona)
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hey [recruiter](persona)
+    - hey [recruiter](persona)
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yupp
+    - yepp
+    - sure
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - nah
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: resume_file
+  examples: |
+    - resume
+- intent: resume_matching_done
+  examples: |
+    - matching done
+    - resume matching done
+    - done matching
+- intent: job_selected
+  examples: |
+    - job selected
+    - job accepted
+- intent: begin_L0_interview
+  examples: |
+    - start
+    - start the interview
+    - let's start
+    - let's get started
+- intent: prelim_1st_answer
+  examples: |
+    - First
+    - first
+- intent: prelim_2nd_answer
+  examples: |
+    - Second
+    - second
+- intent: option
+  examples: |
+    - Totally disagree
+    - Slightly disagree
+    - Neutral
+    - Slightly agree
+    - Totally agree
+# - intent: job_role_recruiter
+#   examples: |
+#     - Show me candidates for a [developer](role) position of [5 years](experience)  of experience.
+#     - Candidates with [3 years](experience) of experience in an [HR](role) role.
+#     - [HR](role) with [7 years](experience) experience
+- intent: job_role_recruiter
+  examples: |
+    - Show me candidates for a [developer](role)
+    - Candidates with [HR](role) role.
+    - [HR](role) role
+    - [HR](role)
+- intent: job_experience_recruiter
+  examples: |
+    - Show me candidates of [5 years](experience) of experience.
+    - Candidates with [3 years](experience) of experience
+    - [7 years](experience) experience
+    - [7 years](experience)
+    - experience with [5 years](experience)
+- intent: candidate_selected
+  examples: |
+    - candidate selected
+    - select candidate
+    - selected this candidate
+    - select this candidate
+- intent: interview_date_time
+  examples: |
+    - [09/07](date) at [9 AM](time) or [8/5](date) [5 PM](time)
+    - On [23/09/21](date) at [4 pm](time)
+    - [17/12/2021](date) at [12 AM](time)
+    - [8/9](date) [9 am](time)
+    - [5/12](date) at [4 pm](time)
+    - [19th September](date) at [12 AM](time)
+    - [19th September 2021](date) at [12 AM](time)
+- synonym: HR
+  examples: |
+    - Human Resources
+- synonym: Database Management
+  examples: |
+    - DBM
+    - Database Management Systems
+    - DBMS
+- synonym: Network Security
+  examples: |
+    - Cyber security
+    - Information security
+    - Cybersec
+    - Infosec
+    - Security Analyst
+- synonym: Develpoment Operations
+  examples: |
+    - DevOps

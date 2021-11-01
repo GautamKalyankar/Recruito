@@ -1,0 +1,139 @@
+version: "2.0"
+
+stories:
+
+#- story: happy path
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_great
+#  - action: utter_happy
+#
+#- story: sad path 1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_happy
+#
+#- story: sad path 2
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: deny
+#  - action: utter_goodbye
+#
+#- story: interactive_story_1
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot
+#  - intent: mood_unhappy
+
+- story: ideal applicant path
+  steps:
+    - intent: greet
+      entities:
+      - persona: applicant
+    - action: utter_greet_applicant
+#    - intent: apply_for_job
+#    - action: application_form
+#    - active_loop: application_form
+#    - active_loop: null
+#    - slot_was_set:
+#      - job_role: null
+#    - action: utter_ask_for_resume
+    - intent: resume_file
+    - action: utter_resume_matching
+    - intent: resume_matching_done
+    - action: utter_show_jobs_available
+#    - intent: job_selected
+#    - action: utter_confirm_job_application
+    - intent: affirm
+    - action: utter_L0_interview_affirmation
+    - intent: affirm
+    - action: utter_prelim_instructions
+    - intent: begin_L0_interview
+    - action: utter_1st_prelim
+    - intent: prelim_1st_answer
+    - action: utter_2nd_prelim
+    - intent: prelim_2nd_answer
+    - action: utter_1st_MCQ
+    - intent: option
+    - action: utter_2nd_MCQ
+    - intent: option
+    - action: utter_3rd_MCQ
+    - intent: option
+    - action: utter_4th_MCQ
+    - intent: option
+    - action: utter_5th_MCQ
+    - intent: option
+    - action: utter_6th_MCQ
+    - intent: option
+    - action: utter_7th_MCQ
+    - intent: option
+    - action: utter_8th_MCQ
+    - intent: option
+    - action: utter_L0_end
+#
+#
+#
+- story: applicant says no to L0 interview
+  steps:
+    - intent: greet
+      entities:
+      - persona: applicant
+    - action: utter_greet_applicant
+    - intent: resume_file
+    - action: utter_resume_matching
+    - intent: resume_matching_done
+    - action: utter_show_jobs_available
+#    - intent: job_selected
+#    - action: utter_confirm_job_application
+    - intent: affirm
+    - action: utter_L0_interview_affirmation
+    - intent: deny
+    - action: utter_give_L0_when_convenient
+
+- story: ideal recruiter path
+  steps:
+    - intent: greet
+      entities:
+      - persona: recruiter
+    - action: utter_greet_recruiter
+    # - action: utter_ask_role
+
+    - intent: job_role_recruiter
+    - action: utter_ask_experience
+
+    - intent: job_experience_recruiter
+    - action: utter_list_of_candidates
+
+    - intent: candidate_selected
+    - action: utter_confirm_candidate_message
+
+
+- story: ask role and experince recruiter flow
+  steps:
+    - intent: job_role_recruiter
+    - action: utter_ask_experience
+
+    - intent: job_experience_recruiter
+    - action: utter_list_of_candidates
+    
+    - intent: candidate_selected
+    - action: utter_confirm_candidate_message
+
+
+
+- story: select candidate recruiter flow
+  steps:
+    - intent: candidate_selected
+    - action: utter_confirm_candidate_message
+
+

@@ -1,0 +1,204 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+# - interview_date_time
+- greet
+- job_role_recruiter
+- job_experience_recruiter
+- candidate_selected
+- job_selected
+- resume_file
+- prelim_2nd_answer
+- resume_matching_done
+- affirm
+- prelim_3rd_answer
+- begin_L0_interview
+- prelim_1st_answer
+- option
+- goodbye
+- bot_challenge
+- mood_unhappy
+- deny
+- mood_great
+- experience_required
+entities:
+- date
+- experience
+- persona
+- role
+- time
+slots:
+  persona:
+    type: categorical
+    influence_conversation: true
+    values:
+    - recruiter
+    - applicant
+  # role:
+  #   type: text
+  # experience:
+  #   type: float
+responses:
+  utter_greet_applicant:
+  - text: Hey I am Recruito! Welcome to the LTI Careers Page. ^Please share your resume, and I'll find the perfect job for you!
+  utter_greet_recruiter:
+  - text: Hey I am Recruito! Let me help you find some suitable candidates. ^Please specify the job role of the candidate you are looking for.
+  utter_ask_role:
+  - text: Please specify the job role of the candidate you are looking for.
+  utter_ask_experience:
+  - text: Okay! Another quick question, How many years of experience are you looking for?    
+  utter_resume_matching:
+  - text: Thanks a lot! Hold on a bit, let me see what I have that suits your profile the best.
+  utter_show_jobs_available:
+  - text: I have found these below jobs for you. Click on them to view the description.
+  utter_ask_application:
+  - text: OK sure, let me show you the job-list again.
+  utter_L0_interview_affirmation:
+  - text: Great! As a part of our process, I will be your L0 interviewer. Are you ready to start a quick and fun assessment?
+    buttons:
+    - title: Yes
+      payload: /affirm
+    - title: No
+      payload: /deny
+  utter_give_L0_when_convenient:
+  - text: OK sure. You can come back anytime and give the test. Thank you and have a nice day!
+  utter_prelim_instructions:
+  - text: OK, Let's begin then! ^Quick instructions- For the first 2 questions, please answer in brief. Others will be MCQs. Do not refresh at any point else you will lose the test. \n \nClick on Start when you are ready to begin! All the best!
+    buttons:
+    - title: Start
+      payload: /begin_L0_interview
+  utter_1st_prelim:
+  - text: As a leader, what do you expect from your team?
+  utter_2nd_prelim:
+  - text: How do you resolve conflicts at work?
+  utter_1st_MCQ:
+  - text: 1st_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_2nd_MCQ:
+  - text: 2nd_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_3rd_MCQ:
+  - text: 3rd_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_4th_MCQ:
+  - text: 4th_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_5th_MCQ:
+  - text: 5th_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_6th_MCQ:
+  - text: 6th_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_7th_MCQ:
+  - text: 7th_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_8th_MCQ:
+  - text: 8th_MCQ
+    buttons:
+    - title: Totally disagree
+      payload: /option
+    - title: Slightly disagree
+      payload: /option
+    - title: Neutral
+      payload: /option
+    - title: Slightly agree
+      payload: /option
+    - title: Totally agree
+      payload: /option
+  utter_L0_end:
+  - text: You succesfully completed your L0 assessment! We will get back to you as soon as we have your results, and till then will keep in touch via e-mail. Thank you for your time! Goodbye for now!
+  utter_list_of_candidates:
+  - text: Here is the list of suitable candidates.
+  utter_time_date:
+  - text: What is your preferred date and time to conduct the L1 interview of the candidate?
+  utter_email_candidate_interview_time:
+  - text: Thank you! I have sent an email to the applicant with your preferred slots. You will get an email confirmation soon.
+  utter_confirm_candidate_message:
+  - text:  Great! I have shortlisted the candidate. We will get back to you on next steps.
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye, hope to see you soon!
+  utter_iamabot:
+  - text: I am Recruito, a bot powered by Rasa.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+actions:
+- utter_iamabot

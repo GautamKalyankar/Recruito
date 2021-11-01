@@ -1,0 +1,70 @@
+{
+    "name": "vue-cli-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.9.0",
+        "@babel/plugin-proposal-export-default-from": "^7.10.4",
+        "@babel/plugin-proposal-export-namespace-from": "^7.10.4",
+        "@babel/plugin-proposal-throw-expressions": "^7.10.4",
+        "@babel/polyfill": "^7.10.4",
+        "@vue/babel-preset-app": "^4.4.6",
+        "aws-sdk": "^2.713.0",
+        "axios": "^0.21.0",
+        "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+        "babel-polyfill": "^6.26.0",
+        "botbuilder-adapter-web": "^1.0.5",
+        "botframework-directlinejs": "^0.15.0",
+        "botframework-webchat": "^0.15.0",
+        "chart.js": "^2.9.4",
+        "core-js": "^3.6.5",
+        "current-script-polyfill": "^1.0.0",
+        "languagedetect": "^2.0.0",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.2",
+        "vue": "^2.6.12",
+        "vue-beautiful-chat": "^2.2.0",
+        "vue-chartjs": "^3.5.1",
+        "vuex": "^3.4.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.10.5",
+        "@babel/plugin-transform-arrow-functions": "^7.10.4",
+        "@babel/preset-env": "^7.10.4",
+        "@vue/cli-plugin-babel": "^4.4.6",
+        "@vue/cli-plugin-eslint": "^3.1.1",
+        "@vue/cli-service": "^4.5.13",
+        "babel-eslint": "^10.1.0",
+        "babel-preset-env": "^1.7.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.2.2",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "plugins": [
+        "@babel/plugin-transform-arrow-functions"
+    ],
+    "browserslist": [
+        "> 0.25%",
+        "ie >=11 "
+    ]
+}
